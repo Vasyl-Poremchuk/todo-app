@@ -234,6 +234,12 @@ class TodoBase(BaseModel):
                 detail="The `title` must contain letters.",
             )
 
+        if not (5 <= len(value) <= 30):
+            raise TitleFormatException(
+                detail="The length of the `title` should be at least 5 and "
+                "no more than 30 characters."
+            )
+
         return value
 
     @validator("description")
@@ -250,6 +256,13 @@ class TodoBase(BaseModel):
             raise DescriptionFormatException(
                 detail="The `description` must contain letters.",
             )
+
+        if not (5 <= len(value) <= 200):
+            raise DescriptionFormatException(
+                detail="The length of the `description` should be at least 5 and "
+                "no more than 200 characters."
+            )
+
         return value
 
 

@@ -66,7 +66,7 @@ async def update_todo(
     todo_service.update_todo(todo=todo, todo_id=todo_id)
 
 
-@router.delete("/todo/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_todo(
     user: user_dependency,
     db: db_dependency,
