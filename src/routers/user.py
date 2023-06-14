@@ -22,7 +22,7 @@ async def get_user(
     return user_service.get_user_by_id(user_id=user.user_id)
 
 
-@router.put("/password", status_code=status.HTTP_204_NO_CONTENT)
+@router.put("/reset-password", status_code=status.HTTP_204_NO_CONTENT)
 async def change_password(
     user: user_dependency,
     db: db_dependency,
