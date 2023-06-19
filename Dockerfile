@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . /app
 
 # Expose the port on which the `todo` app will run
-EXPOSE 8000
+EXPOSE 80
 
 # Set the entrypoint command to start the `todo`
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80"]
